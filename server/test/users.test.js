@@ -17,7 +17,7 @@ describe('GET user repos', () => {
 
 	describe('errors', () => {
 
-		it('should throw 400 with invalid query params', done => {
+		it('should throw 400 for invalid query params', done => {
 	
 			request(app)
 					.get('/users/sebjwallace')

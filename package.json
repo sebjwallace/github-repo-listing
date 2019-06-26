@@ -4,7 +4,8 @@
   "description": "app to list pulic user/organisation github repos",
   "main": "index.js",
   "scripts": {
-    "test:api": "./node_modules/mocha/bin/mocha ./server/test --exit"
+    "test:api": "./node_modules/mocha/bin/mocha ./server/test --exit",
+    "start:app": "react-scripts start"
   },
   "keywords": [
     "api",
@@ -24,7 +25,10 @@
     "nock": "^10.0.6",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "0.9.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
