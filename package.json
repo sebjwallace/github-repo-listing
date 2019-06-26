@@ -1,0 +1,25 @@
+{
+  "name": "github-repo-listing",
+  "version": "1.0.0",
+  "description": "app to list pulic user/organisation github repos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "react",
+    "github",
+    "repositories",
+    "app"
+  ],
+  "author": "Sebastian Wallace",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
