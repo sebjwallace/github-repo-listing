@@ -1,5 +1,4 @@
-const axios = require('axios');
-const { stringify } = require('query-string');
+const request = require('request-promise');
 const { github } = require('../config');
 
 module.exports = async (req, res) => {
@@ -11,10 +10,13 @@ module.exports = async (req, res) => {
         query
     } = req;
 
-    const url = `${github.url}/users/${username}/repos?${stringify(query)}`;
+    const repos = await request({
+        url: `${github.url}/users/${username}/repos`,
+        qs: query,
+        headers: github.headers,
+        json: true
+    });
 
-    const { data: repos } = await axios.get(url);
-
-    res.send(repos);
+    return res.json(repos);
 
 };
