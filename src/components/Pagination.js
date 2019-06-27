@@ -38,9 +38,9 @@ import './Pagination.scss';
         Array
           .from({length: lastPage}, (v,i) => i)
           .filter(i =>
-            (currentPage > end && i >= end) ||
-            (i - range >= currentPage - range &&
-            i - range <= currentPage + range)
+            (currentPage <= range && i <= range * 2) ||
+            (i >= currentPage - range && i <= currentPage + range) ||
+            (currentPage >= lastPage - range && i >= end)
           )
           .map(i => <div className="button numbered" key={i}>
             <span className={ i === currentPage && 'current'}>
