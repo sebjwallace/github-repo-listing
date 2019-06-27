@@ -1,0 +1,24 @@
+$border: 1px solid rgb(206, 206, 206);
+
+.Search {
+  display: flex;
+  width: 100%;
+  input {
+    padding: 0.5em;
+    width: -webkit-fill-available;
+  }
+  input, select, button {
+    background: #fff;
+    border: $border;
+    border-right: none;
+  }
+  select {
+    text-transform: capitalize;
+  }
+  button {
+    background: #fafafa;
+  }
+  button:last-child{
+    border-right: $border;
+  }
+}

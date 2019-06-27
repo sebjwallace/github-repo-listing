@@ -16,6 +16,9 @@
   ],
   "author": "Sebastian Wallace",
   "license": "ISC",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
     "axios": "^0.19.0",
@@ -23,17 +26,31 @@
     "express": "^4.17.1",
     "express-joi-validation": "^1.0.0",
     "nock": "^10.0.6",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "supertest": "^4.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "0.9.5"
+    "react-icons": "^3.7.0",
+    "react-scripts": "3.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
-    "superagent": "^5.1.0"
+    "superagent": "^5.1.0",
+    "node-sass": "^4.12.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
