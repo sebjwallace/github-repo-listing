@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Repo from './Repo';
+import Pagination from './Pagination';
 
  class List extends Component {
 
@@ -29,6 +30,7 @@ import Repo from './Repo';
           owner={login}
         />
       </div>)}
+      <Pagination lastPage={20} range={2}/>
     </div>
 
   }

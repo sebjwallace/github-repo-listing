@@ -1,0 +1,12 @@
+.Pagination {
+  display: flex;
+  .button {
+    margin: 0 0.5em;
+  }
+  .numbered {
+    width: 1em;
+  }
+  .current {
+    font-weight: bold;
+  }
+}

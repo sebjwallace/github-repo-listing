@@ -12,7 +12,8 @@ const query = validator().query(
     Joi.object().keys({
         type: Joi.string().valid(type).required(),
         sort: Joi.string().valid(sort).required(),
-        direction: Joi.string().valid(direction).required()
+        direction: Joi.string().valid(direction),
+        page: Joi.number()
     })
 )
 
