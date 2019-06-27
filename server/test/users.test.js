@@ -6,9 +6,14 @@ const app = require('../index');
 const { github } = require('../config');
 
 const mocks = {
-	users: {
-		response: {
-			asc: require('./mocks/users.asc.response')
+	github: {
+		users: {
+			response: require('./mocks/github/users.response')
+		}
+	},
+	api: {
+		users: {
+			response: require('./mocks/api/repos.response')
 		}
 	}
 }
@@ -41,11 +46,15 @@ describe('GET user repos', () => {
 				sort: 'created',
 				type: 'all'
 			};
+
+			const headers = {
+				link: '<https://api.github.com/user/7163145/repos?page=2>; rel="next", <https://api.github.com/user/7163145/repos?page=2>; rel="last"'
+			};
 	
 			nock(github.url)
 				.get('/users/sebjwallace/repos')
 				.query(query)
-				.reply(200, mocks.users.response.asc);
+				.reply(200, mocks.github.users.response, headers);
 	
 			request(app)
 				.get('/users/sebjwallace')
@@ -53,7 +62,7 @@ describe('GET user repos', () => {
 				.end((err, res) => {
 					expect(err).to.eq(null);
 					expect(res.status).to.eq(200);
-					expect(res.body).to.deep.eq(mocks.users.response.asc);
+					expect(res.body).to.deep.eq(mocks.api.users.response);
 					done();
 				});
 	
