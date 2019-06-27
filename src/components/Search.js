@@ -57,10 +57,17 @@ class Search extends Component {
 		this.setState({sort: value});
 	}
 
+	handleKeyPress = (event) => {
+		if(event.keycode === 13) this.handleSubmit(event);
+	}
+
 	handleSubmit = event => {
 		event.preventDefault();
 		const { onSubmit } = this.props;
-		onSubmit && onSubmit(event);
+		const { userName, type, sort } = this.state;
+		onSubmit && onSubmit({
+			userName, type, sort
+		});
 	}
 
 	render(){
@@ -77,6 +84,7 @@ class Search extends Component {
 				type="text"
 				placeholder="enter a github username"
 				onChange={this.handleUserNameChange}
+				onKeyPress={this.handleKeyPress}
 			/>
 			<select disabled={!userName} defaultValue={defaultType} onChange={this.handleRepoTypeChange}>
 				{types.map(type => <option key={type} value={type}>
@@ -85,7 +93,7 @@ class Search extends Component {
 			</select>
 			<select disabled={!userName} defaultValue={defaultSort} onChange={this.handleSortChange}>
 				{SORT.map(sort => <option key={sort} value={sort}>
-					{sort.replace(/\_/g,' ')}
+					{sort.replace(/_/g,' ')}
 				</option>)}
 			</select>
 			<button disabled={!userName}>
