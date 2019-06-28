@@ -1,4 +1,4 @@
 module.exports = [
-    require('./users'),
+    require('./repos'),
     require('./params')
 ];

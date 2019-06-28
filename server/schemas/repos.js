@@ -1,6 +1,6 @@
 const Joi = require('@hapi/joi');
 const validator = require('express-joi-validation');
-const { type, sort, direction } = require('../config').github.params.users;
+const { type, sort, direction } = require('../config').github.params.repos;
 
 const params = validator().params(
     Joi.object().keys({

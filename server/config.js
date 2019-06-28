@@ -6,7 +6,7 @@ module.exports = {
             'User-Agent': 'request'
         },
         params: {
-            users: {
+            repos: {
                 type: [
                     'all',
                     'owner',

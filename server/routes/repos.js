@@ -5,8 +5,8 @@ const controllers = require('../controllers');
 const schemas = require('../schemas');
 
 app.get(
-    '/users/:username',
-    schemas.users.params,
-    schemas.users.query,
-    controllers.users
+    '/repos/:username',
+    schemas.repos.params,
+    schemas.repos.query,
+    controllers.repos
 );

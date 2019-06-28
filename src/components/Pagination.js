@@ -15,15 +15,18 @@ import './Pagination.scss';
 
   handlePrevClick = () => {
     const { currentPage } = this.state;
+    const { onChange } = this.props;
     const hasHitLimit = currentPage === 0;
     this.setState({currentPage: hasHitLimit ? currentPage : currentPage - 1});
+    onChange && onChange(currentPage);
   }
-
+  
   handleNextClick = () => {
     const { currentPage } = this.state;
-    const { lastPage } = this.props;
+    const { lastPage, onChange } = this.props;
     const hasHitLimit = currentPage + 1 === lastPage;
     this.setState({currentPage: hasHitLimit ? currentPage : currentPage + 1});
+    onChange && onChange(currentPage);
   }
 
   render(){
