@@ -33,10 +33,15 @@ import './Pagination.scss';
 
     const { lastPage, range } = this.props;
     const { currentPage } = this.state;
+
+    const isFirstPage = currentPage === 0;
+    const isLastPage = currentPage === lastPage;
     const end = lastPage - range * 2 - 1
 
     return <div className="Pagination">
-      <button className="button" onClick={this.handlePrevClick}>back</button>
+      <button className="button" disabled={isFirstPage} onClick={this.handlePrevClick}>
+        back
+      </button>
       {
         Array
           .from({length: lastPage}, (v,i) => i)
@@ -51,7 +56,9 @@ import './Pagination.scss';
             </span>
           </div>)
       }
-      <button className="button" onClick={this.handleNextClick}>next</button>
+      <button className="button" disabled={isLastPage} onClick={this.handleNextClick}>
+        next
+      </button>
     </div>
 
   }
