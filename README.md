@@ -8,22 +8,22 @@ This project has only been tested on Chrome v75. It may look or behave in uninte
 
 ## Use
 
-Install:  
+**Install:**  
 `npm run install:all`  
 An npm script is used to install client and server node modules separately because they each have their own packages. It's just shorthand for `npm i && cd ./client && npm i`.
 
-Build:  
+**Build:**  
 `npm run build`  
 
-Run development:  
+**Run development:**  
 `npm run dev`  
 This runs the client and server. The client can be run in silo with `npm run client`, and the server with `npm run server`.
 
-Run production (run build command first):  
+**Run production (run build command first):**  
 `npm run server`  
 The server serves the build files from root at `localhost:5000`
 
-Run API tests:  
+**Run API tests:**  
 `npm run test`
 
 ## Setup
