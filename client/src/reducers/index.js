@@ -1,31 +1,14 @@
 import {
-  SET_USER,
-  SET_REPO_TYPE,
-  SET_REPO_SORT,
   SET_CURRENT_PAGE,
   REQUEST_REPOS,
   RECEIVE_REPOS
 } from '../actions';
 
 export default (state = {
+  repos: [],
   loadingRepos: false
 }, action) => {
   switch(action.type) {
-    case SET_USER:
-      return {
-        ...state,
-        userName: action.userName
-      };
-    case SET_REPO_TYPE:
-      return {
-        ...state,
-        type: action.type
-      };
-    case SET_REPO_SORT:
-      return {
-        ...state,
-        sort: action.sort
-      };
     case SET_CURRENT_PAGE:
       return {
         ...state,
