@@ -4,10 +4,12 @@
   "description": "app to list pulic user/organisation github repos",
   "main": "index.js",
   "scripts": {
+    "install:all": "npm i && cd ./client && npm i",
     "client": "cd client && npm run start",
     "server": "./node_modules/nodemon/bin/nodemon.js server/index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "./node_modules/mocha/bin/mocha ./server/test --exit"
+    "test": "./node_modules/mocha/bin/mocha ./server/test --exit",
+    "build": "cd ./client && npm run build"
   },
   "keywords": [
     "api",

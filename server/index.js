@@ -14,6 +14,8 @@ app.use(cors());
 
 app.use(routes);
 
+app.use(express.static(__dirname + '/../client/build'));
+
 app.listen(port, () => 
     console.log(`Server listening on port ${port}`)
 );
