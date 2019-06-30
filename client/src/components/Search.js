@@ -72,6 +72,7 @@ class Search extends Component {
 
 	render(){
 
+		const { disable } = this.props;
 		const { userName, userType, type: defaultType, sort: defaultSort } = this.state;
 		const types = TYPES[userType];
 
@@ -96,7 +97,7 @@ class Search extends Component {
 					{sort.replace(/_/g,' ')}
 				</option>)}
 			</select>
-			<button disabled={!userName}>
+			<button disabled={!userName || disable}>
 				<IoIosSearch />
 			</button>
 		</form>
