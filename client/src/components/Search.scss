@@ -1,4 +1,5 @@
-$border: 1px solid rgb(206, 206, 206);
+@import "../index.scss";
+
 $shadow: 2px 2px 1px 0px rgba(0,0,0,0.05);
 $buttonColor: #456ab3;
 
@@ -9,14 +10,14 @@ $buttonColor: #456ab3;
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
   input {
-    padding: 0.5em;
+    padding: $padding-small;
     width: -webkit-fill-available;
   }
   input, select, button {
     background: #fff;
     border: $border;
     border-right: none;
-    padding: 0.8em;
+    padding: $padding-med;
   }
   select {
     text-transform: capitalize;
@@ -24,6 +25,6 @@ $buttonColor: #456ab3;
   button {
     background: $buttonColor;
     border: $buttonColor;
-    padding: 0 1em;
+    padding: 0 $padding-large;
   }
 }

@@ -1,3 +1,5 @@
+@import "../index.scss";
+
 .Header {
   display: flex;
   flex-direction: column;
@@ -5,11 +7,11 @@
   padding: 1em 0;
   .container {
     width: 100%;
-    max-width: 800px;
+    max-width: $container-width;
   }
   h2 {
     margin: 0;
     padding: 0;
-    padding-bottom: 0.5em;
+    padding-bottom: $padding-small;
   }
 }

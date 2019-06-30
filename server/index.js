@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(cors()); // for local dev
+app.use(cors());
 
 app.use(routes);
 

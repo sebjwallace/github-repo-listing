@@ -1,8 +1,8 @@
 export const REQUEST_REPOS = 'REQUEST_REPOS';
 export const RECEIVE_REPOS = 'RECEIVE_REPOS';
-export const CHANGE_PAGE = 'CHANGE_PAGE';
 
 export const requestRepos = ({
+  userType,
   userName,
   type,
   sort,
@@ -11,12 +11,13 @@ export const requestRepos = ({
   dispatch({
     type: REQUEST_REPOS,
     loadingRepos: true,
+    userType,
     userName,
     repoType: type,
     sort,
     page
   });
-  const url = `/repos/${userName}?type=${type}&sort=${sort}&direction=desc&page=${page}`;
+  const url = `/${userType}/${userName}/repos?type=${type}&sort=${sort}&direction=desc&page=${page}`;
   const response = await fetch(url);
   const { repos, pages } = await response.json();
   dispatch(receiveRepos(repos, pages));
@@ -27,8 +28,3 @@ export const receiveRepos = (repos, pages) => ({
   repos,
   pages
 });
-
-export const changePage = page => ({
-  type: CHANGE_PAGE,
-  page
-})

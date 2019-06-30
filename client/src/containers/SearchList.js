@@ -10,15 +10,15 @@ import Loading from '../components/Loading';
 
 class SearchList extends Component {
 
-  handleSubmit = async ({ userName, type, sort }) => {
+  handleSubmit = async ({ userType, userName, type, sort }) => {
     const { requestRepos } = this.props;
-    requestRepos({ userName, type, sort });
+    requestRepos({ userType, userName, type, sort });
   }
   
   handlePageChange = (page) => {
     const { requestRepos } = this.props;
-    const { userName, type, sort } = this.props;
-    requestRepos({ userName, type, sort, page });
+    const { userType, userName, type, sort } = this.props;
+    requestRepos({ userType, userName, type, sort, page });
   }
 
   render(){

@@ -1,4 +1,4 @@
-$border: 1px solid rgb(206, 206, 206);
+@import "../index.scss";
 
 .Pagination {
   display: flex;
@@ -7,10 +7,11 @@ $border: 1px solid rgb(206, 206, 206);
     background: white;
     border: $border;
     border-right: none;
-    padding: 0.7em;
-    margin: 1em 0;
+    padding: $padding-med;
+    margin: $padding-large 0;
+    cursor: pointer;
     &:hover {
-      background: #fafafa;
+      background: $background;
     }
   }
   .current {

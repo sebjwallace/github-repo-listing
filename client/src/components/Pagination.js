@@ -69,7 +69,7 @@ import './Pagination.scss';
               onClick={() => this.handleNumberClick(i)}
               key={i}
             >
-              <span className={ i === currentPage && 'current'}>
+              <span className={ i === currentPage ? 'current' : ''}>
                 {i+1}
               </span>
           </button>)

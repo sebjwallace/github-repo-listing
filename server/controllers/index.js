@@ -1,4 +1,3 @@
 module.exports = {
-    repos: require('./repos'),
-    params: require('./params')
+    repos: require('./repos')
 };

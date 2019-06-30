@@ -1,0 +1,14 @@
+$background: #fafafa;
+$border: 1px solid rgb(206, 206, 206);
+$container-width: 800px;
+$padding-small: 0.5em;
+$padding-med: 0.7em;
+$padding-large: 1em;
+
+body {
+  margin: 0;
+  height: 100%;
+  background: $background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

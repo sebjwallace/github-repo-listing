@@ -10,7 +10,7 @@ const Repo = ({ name, stars, forks, description, url }) => <div className="Repo"
       <b> { name }</b>
     </span>
     <span className="pull-right">
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <FaExternalLinkAlt/>
       </a>
     </span>

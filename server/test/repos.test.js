@@ -25,7 +25,7 @@ describe('GET user repos', () => {
 		it('should throw 400 for invalid query params', done => {
 	
 			request(app)
-					.get('/repos/sebjwallace')
+					.get('/users/sebjwallace/repos')
 					.query({})
 					.end((err, res) => {
 							expect(err).to.eq(null);
@@ -57,7 +57,7 @@ describe('GET user repos', () => {
 				.reply(200, mocks.github.repos.response, headers);
 	
 			request(app)
-				.get('/repos/sebjwallace')
+				.get('/users/sebjwallace/repos')
 				.query(query)
 				.end((err, res) => {
 					expect(err).to.eq(null);

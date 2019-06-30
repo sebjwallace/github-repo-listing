@@ -1,7 +1,6 @@
 import {
   REQUEST_REPOS,
-  RECEIVE_REPOS,
-  CHANGE_PAGE
+  RECEIVE_REPOS
 } from '../actions';
 
 export default (state = {
@@ -10,15 +9,11 @@ export default (state = {
   loadingRepos: false
 }, action) => {
   switch(action.type) {
-    case CHANGE_PAGE:
-      return {
-        ...state,
-        page: action.page
-      };
     case REQUEST_REPOS:
       return {
         ...state,
         loadingRepos: true,
+        userType: action.userType,
         userName: action.userName,
         type: action.repoType,
         sort: action.sort,

@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
 
     const {
         params: {
+            usertype,
             username
         },
         query
@@ -17,7 +18,7 @@ module.exports = async (req, res) => {
     });
 
     const repos = await request({
-        url: `${github.url}/users/${username}/repos`,
+        url: `${github.url}/${usertype}/${username}/repos`,
         qs: query,
         headers: github.headers,
         json: true,

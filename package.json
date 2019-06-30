@@ -6,7 +6,8 @@
   "scripts": {
     "client": "cd client && npm run start",
     "server": "./node_modules/nodemon/bin/nodemon.js server/index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "test": "./node_modules/mocha/bin/mocha ./server/test --exit"
   },
   "keywords": [
     "api",

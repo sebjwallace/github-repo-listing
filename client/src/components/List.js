@@ -7,7 +7,7 @@ const List = ({ repos }) => <div className="List">{
     id,
     name,
     description,
-    git_url,
+    html_url,
     stargazers_count,
     forks_count,
     owner: { login }
@@ -19,7 +19,7 @@ const List = ({ repos }) => <div className="List">{
       forks={forks_count}
       description={description}
       owner={login}
-      url={git_url}
+      url={html_url}
     />
   </div>)
 }</div>

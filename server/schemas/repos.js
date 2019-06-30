@@ -4,6 +4,7 @@ const { type, sort, direction } = require('../config').github.params.repos;
 
 const params = validator().params(
     Joi.object().keys({
+        usertype: Joi.string().required(),
         username: Joi.string().required()
     })
 );

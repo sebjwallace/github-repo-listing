@@ -1,12 +1,14 @@
+@import "../index.scss";
+
 .Repo {
   width: 100%;
   text-align: left;
-  padding: 0.7em;
+  padding: $padding-med;
   .description {
-    font-size: 0.7em;
+    font-size: $padding-med;
   }
   .pull-right {
-    margin-left: 0.5em;
+    margin-left: $padding-small;
     float: right;
   }
   .fade {

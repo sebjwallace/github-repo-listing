@@ -24,7 +24,12 @@ const SORT = [
 	'updated',
 	'pushed',
 	'full_name'
-]
+];
+
+const USERTYPE_MAP = {
+	user: 'users',
+	organisation: 'orgs'
+};
 
 class Search extends Component {
 
@@ -64,9 +69,12 @@ class Search extends Component {
 	handleSubmit = event => {
 		event.preventDefault();
 		const { onSubmit } = this.props;
-		const { userName, type, sort } = this.state;
+		const { userType, userName, type, sort } = this.state;
 		onSubmit && onSubmit({
-			userName, type, sort
+			userType: USERTYPE_MAP[userType],
+			userName,
+			type,
+			sort
 		});
 	}
 
