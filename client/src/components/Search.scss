@@ -1,8 +1,14 @@
 $border: 1px solid rgb(206, 206, 206);
+$borderRadius: 1em;
+$shadow: 2px 2px 1px 0px rgba(0,0,0,0.05);
+$buttonColor: #456ab3;
 
 .Search {
   display: flex;
   width: 100%;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
   input {
     padding: 0.5em;
     width: -webkit-fill-available;
@@ -11,14 +17,14 @@ $border: 1px solid rgb(206, 206, 206);
     background: #fff;
     border: $border;
     border-right: none;
+    padding: 0.8em;
   }
   select {
     text-transform: capitalize;
   }
   button {
-    background: #fafafa;
-  }
-  button:last-child{
-    border-right: $border;
+    background: $buttonColor;
+    border: $buttonColor;
+    padding: 0 1em;
   }
 }

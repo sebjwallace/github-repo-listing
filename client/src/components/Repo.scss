@@ -1,20 +1,18 @@
 .Repo {
-  margin: 1em 0;
+  width: 100%;
   text-align: left;
-  border: 1px solid #dadada;
-  .title {
-    padding: 0.5em;
-    background: #fafafa;
-    cursor: pointer;
+  padding: 0.7em;
+  .description {
+    font-size: 0.7em;
   }
-  .expanded {
-    padding: 0.5em;
-    display: block;
-  }
-  .hidden {
-    display: none;
-  }
-  .stars {
+  .pull-right {
+    margin-left: 0.5em;
     float: right;
+  }
+  .fade {
+    opacity: 0.2;
+  }
+  a {
+    color: black;
   }
 }

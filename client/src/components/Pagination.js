@@ -36,7 +36,7 @@ import './Pagination.scss';
 
     const isFirstPage = currentPage === 0;
     const isLastPage = currentPage === lastPage;
-    const end = lastPage - range * 2 - 1
+    const end = lastPage - range * 2 - 1;
 
     return <div className="Pagination">
       <button className="button" disabled={isFirstPage} onClick={this.handlePrevClick}>

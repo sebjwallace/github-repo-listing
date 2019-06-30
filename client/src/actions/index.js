@@ -12,7 +12,7 @@ export const requestRepos = ({
     type: REQUEST_REPOS,
     loadingRepos: true
   });
-  const url = `/repos/${userName}?type=${type}&sort=${sort}&direction=asc&page=${page}`;
+  const url = `/repos/${userName}?type=${type}&sort=${sort}&direction=desc&page=${page}`;
   const response = await fetch(url);
   const { repos, pages } = await response.json();
   dispatch(receiveRepos(repos, pages));

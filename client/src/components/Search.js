@@ -84,6 +84,7 @@ class Search extends Component {
 			<input
 				type="text"
 				placeholder="enter a github username"
+				autoFocus={true}
 				onChange={this.handleUserNameChange}
 				onKeyPress={this.handleKeyPress}
 			/>
@@ -98,7 +99,7 @@ class Search extends Component {
 				</option>)}
 			</select>
 			<button disabled={!userName || disable}>
-				<IoIosSearch />
+				<IoIosSearch color="white" size="1.4em"/>
 			</button>
 		</form>
 

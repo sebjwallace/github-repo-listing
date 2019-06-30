@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestRepos } from '../actions';
 
+import Header from '../components/Header';
 import Search from '../components/Search';
 import List from '../components/List';
 import Pagination from '../components/Pagination';
@@ -20,10 +21,17 @@ class SearchList extends Component {
 
     return <div>
       <div>
-        <Search disable={loadingRepos} onSubmit={this.handleSubmit}/>
+        <Header title="Github Repositories">
+          <Search disable={loadingRepos} onSubmit={this.handleSubmit}/>
+        </Header>
         <Loading isLoading={loadingRepos}>
           <List repos={repos}/>
-          <Pagination lastPage={0} range={2} onChange={(e) => console.log(e)}/>
+          {!!repos.length && <Pagination
+            visbile={repos.length}
+            lastPage={0}
+            range={2}
+            onChange={(e) => console.log(e)}
+          />}
         </Loading>
       </div>
     </div>
