@@ -10,14 +10,20 @@ import Loading from '../components/Loading';
 
 class SearchList extends Component {
 
-  handleSubmit = async ({userName, type, sort}) => {
+  handleSubmit = async ({ userName, type, sort }) => {
     const { requestRepos } = this.props;
     requestRepos({ userName, type, sort });
+  }
+  
+  handlePageChange = (page) => {
+    const { requestRepos } = this.props;
+    const { userName, type, sort } = this.props;
+    requestRepos({ userName, type, sort, page });
   }
 
   render(){
 
-    const { loadingRepos, repos } = this.props;
+    const { loadingRepos, repos, pages } = this.props;
 
     return <div>
       <div>
@@ -27,10 +33,9 @@ class SearchList extends Component {
         <Loading isLoading={loadingRepos}>
           <List repos={repos}/>
           {!!repos.length && <Pagination
-            visbile={repos.length}
-            lastPage={0}
+            lastPage={pages}
             range={2}
-            onChange={(e) => console.log(e)}
+            onChange={this.handlePageChange}
           />}
         </Loading>
       </div>

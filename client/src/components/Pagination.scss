@@ -1,12 +1,22 @@
+$border: 1px solid rgb(206, 206, 206);
+
 .Pagination {
   display: flex;
-  .button {
-    margin: 0 0.5em;
-  }
-  .numbered {
-    width: 1em;
+  justify-content: center;
+  button {
+    background: white;
+    border: $border;
+    border-right: none;
+    padding: 0.7em;
+    margin: 1em 0;
+    &:hover {
+      background: #fafafa;
+    }
   }
   .current {
     font-weight: bold;
+  }
+  button:last-child {
+    border: $border;
   }
 }

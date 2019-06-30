@@ -12,4 +12,7 @@
   .container:nth-child(odd) {
     background: white;
   }
+  .container:nth-child(even) {
+    background: #f6f6f6;
+  }
 }

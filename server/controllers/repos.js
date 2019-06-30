@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
 
     const transform = (body, { headers: { link } }) => ({
         repos: body,
-        pages: parse(link).last.page
+        pages: parseInt((parse(link).last || {}).page)
     });
 
     const repos = await request({

@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+  FiChevronsLeft,
+  FiChevronLeft,
+  FiChevronRight,
+  FiChevronsRight
+} from "react-icons/fi";
 import './Pagination.scss';
 
  class Pagination extends Component {
@@ -23,10 +29,16 @@ import './Pagination.scss';
   
   handleNextClick = () => {
     const { currentPage } = this.state;
-    const { lastPage, onChange } = this.props;
-    const hasHitLimit = currentPage + 1 === lastPage;
-    this.setState({currentPage: hasHitLimit ? currentPage : currentPage + 1});
-    onChange && onChange(currentPage);
+    const { onChange } = this.props;
+    const nextPage = currentPage + 1;
+    this.setState({currentPage: nextPage});
+    onChange && onChange(nextPage + 1);
+  }
+
+  handleNumberClick = page => {
+    const { onChange } = this.props;
+    this.setState({currentPage: page});
+    onChange && onChange(page + 1);
   }
 
   render(){
@@ -35,12 +47,15 @@ import './Pagination.scss';
     const { currentPage } = this.state;
 
     const isFirstPage = currentPage === 0;
-    const isLastPage = currentPage === lastPage;
+    const isLastPage = currentPage === lastPage - 1;
     const end = lastPage - range * 2 - 1;
 
     return <div className="Pagination">
-      <button className="button" disabled={isFirstPage} onClick={this.handlePrevClick}>
-        back
+      <button disabled={isFirstPage} onClick={() => this.handleNumberClick(0)}>
+        <FiChevronsLeft/>
+      </button>
+      <button disabled={isFirstPage} onClick={this.handlePrevClick}>
+        <FiChevronLeft/>
       </button>
       {
         Array
@@ -50,14 +65,20 @@ import './Pagination.scss';
             (i >= currentPage - range && i <= currentPage + range) ||
             (currentPage >= lastPage - range && i >= end)
           )
-          .map(i => <div className="button numbered" key={i}>
-            <span className={ i === currentPage && 'current'}>
-              {i+1}
-            </span>
-          </div>)
+          .map(i => <button
+              onClick={() => this.handleNumberClick(i)}
+              key={i}
+            >
+              <span className={ i === currentPage && 'current'}>
+                {i+1}
+              </span>
+          </button>)
       }
-      <button className="button" disabled={isLastPage} onClick={this.handleNextClick}>
-        next
+      <button disabled={isLastPage} onClick={this.handleNextClick}>
+        <FiChevronRight/>
+      </button>
+      <button disabled={isLastPage} onClick={() => this.handleNumberClick(lastPage-1)}>
+        <FiChevronsRight/>
       </button>
     </div>
 

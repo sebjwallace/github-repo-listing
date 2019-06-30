@@ -3,7 +3,7 @@ import './Loading.scss';
 
 const Loading = ({ children, isLoading }) => <div className="Loading">
   <div className={isLoading ? 'disable' : ''}>
-    { isLoading ? 'loading' : '' }
+    { isLoading ? 'loading...' : '' }
     { children }
   </div>
 </div>
