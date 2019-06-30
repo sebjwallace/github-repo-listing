@@ -8,22 +8,22 @@ This project has only been tested on Chrome v75. It may look or behave in uninte
 
 ## Use
 
-Install:
-`npm run install:all`
+Install:  
+`npm run install:all`  
 An npm script is used to install client and server node modules separately because they each have their own packages. It's just shorthand for `npm i && cd ./client && npm i`.
 
-Build:
-`npm run build`
+Build:  
+`npm run build`  
 
-Run development:
-`npm run dev`
+Run development:  
+`npm run dev`  
 This runs the client and server. The client can be run in silo with `npm run client`, and the server with `npm run server`.
 
-Run production (run build command first):
-`npm run server`
+Run production (run build command first):  
+`npm run server`  
 The server serves the build files from root at `localhost:5000`
 
-Run API tests:
+Run API tests:  
 `npm run test`
 
 ## Setup
@@ -40,7 +40,7 @@ The client was constructed using `create-react-app`. Redux is used for state man
 
 ## SASS
 
-Installing `node-sass` easily enables the use of SASS without any other configuration (perk of `create-react-app`). Instead of using css-modules, the styles are decoupled from the app by ensuring that each root node in a component has a `className` that mirrors the name of the component. In the SASS file all the styles and classes are nested under the component's `className` to ensure safe scope. This decoupling means that SASS could be swapped out with another CSS framework and no changes need to be made to the components.
+Installing `node-sass` easily enables the use of SASS without any other configuration (perk of `create-react-app`). Instead of using css-modules, the styles are decoupled from the app by ensuring that each root node in a component has a `className` that mirrors the name of the component. In the SASS file all the styles and classes are nested under the component's `className` to ensure safe scope. This decoupling means that SASS could be swapped out with another CSS framework and no changes need to be made to the components.  
 
 The `index.scss` file holds the global variables that are consumed by component SASS files. This includes border, colors, padding, etc.
 
