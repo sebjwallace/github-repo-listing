@@ -26,6 +26,10 @@ The server serves the build files from root at `localhost:5000`
 **Run API tests:**  
 `npm run test`
 
+## Screenshot
+
+![screenshot](https://raw.githubusercontent.com/sebjwallace/github-repo-listing/master/screenshot.png)
+
 ## Setup
 
 The client project files belong in the `client` project subdirectory. This allows for clear separation from the `server` subdirectory which contains an Express app. For development, instead of running the client and server in silos, an npm script `npm run dev` uses `concurrently` to allow webpack and nodemon to run concurrently. This enables easy development as file changes could be made to either client or server and webpack or nodemon will handle reloading accordingly. Webpack also uses an entry in the client's `package.json` to proxy relative API urls to the port the API is actually running on - `"proxy": "http://localhost:5001"`. This works in development only, because when the client app is built, the server serves the static build files, so client and API are running on the same port in production.
